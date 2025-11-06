@@ -1,0 +1,9 @@
+<div *ngIf="isBrowser">
+  <div style="display: block;">
+    <canvas baseChart 
+      [data]="pieChartData" 
+      [type]="'pie'" 
+      [options]="pieChartOptions">
+    </canvas>
+  </div>
+</div>

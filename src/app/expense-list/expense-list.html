@@ -1,0 +1,26 @@
+<div *ngIf="(expenseService.expenses$ | async)?.length === 0" class="no-expenses">
+  <p>No expenses recorded yet.</p>
+</div>
+
+<div *ngIf="((expenseService.expenses$ | async) ?? []).length > 0" class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of (expenseService.expenses$ | async)">
+        <td>{{ expense.date | date:'medium' }}</td>
+        <td>{{ expense.description }}</td>
+        <td>{{ expense.amount | currency }}</td>
+        <td>{{ expense.category }}</td>
+        <td><button (click)="deleteExpense(expense._id ?? '')">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

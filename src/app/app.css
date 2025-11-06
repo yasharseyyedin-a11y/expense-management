@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+  color: #00ff9f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+/* New container for form and chart side by side */
+.form-chart-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem; /* space between chart and form */
+  width: 100%;
+  max-width: 1200px; /* or whatever max width you prefer */
+  margin-bottom: 3rem;
+}
+
+/* Keep existing styles for list and form */
+
+app-expense-list {
+  width: 100%;       /* Take full width of parent */
+  max-width: 100vw;  /* Restrict max width to viewport width */
+  margin-bottom: 3rem;
+  background-color: #121212;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ff9f44;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow-x: auto;  /* Allow horizontal scroll only if needed */
+}
+
+
+app-expense-form {
+  flex: 1; /* allow form to grow */
+  background-color: #121212;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ff9f44;
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
+
+app-pie-chart {
+  flex: 1; /* allow chart to grow */
+  background-color: #121212;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ff9f44;
+  padding: 2rem;
+  transition: box-shadow 0.3s ease;
+}
