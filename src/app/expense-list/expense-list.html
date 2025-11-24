@@ -15,7 +15,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let expense of (expenseService.expenses$ | async)">
-        <td>{{ expense.date | date:'medium' }}</td>
+        <td>{{ expense.date | date:'yyyy-MM-dd' }}</td>
         <td>{{ expense.description }}</td>
         <td>{{ expense.amount | currency }}</td>
         <td>{{ expense.category }}</td>
